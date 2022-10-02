@@ -1,0 +1,125 @@
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>動漫總覽</title>
+    <link rel="stylesheet" href="test.css">
+</head>
+<style>
+.box {
+  position: absolute;
+  background: #a9a9a9;
+  border-radius: 20px;
+  height: 100%;
+  width: 50px;
+  transition: 1s;
+  -webkit-transition: 1s;
+}
+
+.box:hover {
+  background: #ee82ee;
+}
+.box2 {
+  position: absolute;
+  background: #a9a9a9;
+  border-radius: 20px;
+  height: 100%;
+  width: 50px;
+  transition: 1s;
+  -webkit-transition: 1s;
+  right:10px;
+}
+
+.box2:hover {
+  background: #ee82ee;
+}
+.video2 {
+  position: absolute;
+  top:20%;
+  left:10%;
+}
+.text {
+    position: absolute;
+    font-family: 標楷體;
+    top:10%;
+    right:10%;
+    font-size:25px;
+}
+.text2 {
+    position: absolute;
+    font-family: 標楷體;
+    color:aqua;
+    top:10%;
+    left:10%;
+    font-size:40px;
+}
+html .sakana-box{
+  position: fixed;
+  right: 250;
+  bottom: 0;
+  
+  transform-origin: 100% 100%;
+}
+html .chisato{
+  position: fixed;
+  right: 500;
+  bottom: 0;
+  
+  transform-origin: 100% 100%;
+}
+</style>
+<script src="sakana.min.js"></script>
+<div class="sakana-box"></div>
+<div class="chisato"></div>
+<script>
+Sakana.setMute(false);
+Sakana.init({
+  el:         '.sakana-box',
+  scale:      .5,
+  canSwitchCharacter: true,
+  inertia: 0.01,
+  decay: 1,
+});
+const chisato = Sakana.init({
+            el:'.chisato',
+            scale:      .5,
+            character: 'chisato',
+            inertia: 0.01,
+            decay: 1,
+        });
+</script>
+<body>
+<div style="margin-top:10px" ontouchstart="">
+  <a href='SummerTime21.html'><input type="button" value="◀" name="◀" class="box"></a>
+  </div>
+<div style="margin-top:10px" ontouchstart="">
+    <a href='SummerTime23.html'><input type="button" value="▶" name="▶" class="box2"></a>
+    </div>
+    <div class="text2">夏日重現 第22集1080P</div>
+    <iframe width="560" height="315" class="video2" preload="auto" src="https://drive.google.com/file/d/1PjLXZ2Zoaw9UbHR9BEiNguNad4XzjPnO/preview" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <div class="text"><a href='SummerTime01.html'>夏日重現01</a><br>
+        <a href='SummerTime02.html'>夏日重現02</a><br>
+        <a href='SummerTime03.html'>夏日重現03</a><br>
+        <a href='SummerTime04.html'>夏日重現04</a><br>
+        <a href='SummerTime05.html'>夏日重現05</a><br>
+        <a href='SummerTime06.html'>夏日重現06</a><br>
+        <a href='SummerTime07.html'>夏日重現07</a><br>
+        <a href='SummerTime08.html'>夏日重現08</a><br>
+        <a href='SummerTime09.html'>夏日重現09</a><br>
+        <a href='SummerTime10.html'>夏日重現10</a><br>
+        <a href='SummerTime11.html'>夏日重現11</a><br>
+        <a href='SummerTime12.html'>夏日重現12</a><br>
+        <a href='SummerTime13.html'>夏日重現13</a><br>
+        <a href='SummerTime14.html'>夏日重現14</a><br>
+        <a href='SummerTime15.html'>夏日重現15</a><br>
+        <a href='SummerTime16.html'>夏日重現16</a><br>
+        <a href='SummerTime17.html'>夏日重現17</a><br>
+        <a href='SummerTime18.html'>夏日重現18</a><br>
+        <a href='SummerTime19.html'>夏日重現19</a><br>
+        <a href='SummerTime20.html'>夏日重現20</a><br>
+        <a href='SummerTime21.html'>夏日重現21</a><br>
+        <a href='SummerTime22.html'>夏日重現22</a><br>
+        <a href='SummerTime23.html'>夏日重現23</a><br>
+        <a href='SummerTime24.html'>夏日重現24</a><br>
+        <a href='SummerTime25.html'>夏日重現25</a><br></div>
+</body>
+</html>
