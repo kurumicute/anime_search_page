@@ -34,68 +34,50 @@ html .chisato{
   
   transform-origin: 100% 100%;
 }
-.banner{
-            position: relative;
-        }
-.banner .title p{
-            width: 100%;
-            position: absolute;
-            display: flex;
-            justify-content: center;
-            top: 40px;
-            font-size: 20px;
-        }
-.title2{
-  width: 1600px;
-  height: 80px;
-  position: absolute;
-  background: linear-gradient(#9932cc, #dda0dd);
-
-}
-.title1{
-  position: relative;
-  height: 200px;
-  top:5px;
-  left:5px;
-}
-.menu1{
-  position: fixed;
-  top:-15px;
-  right:25px;
-  border-radius: 15px;
-  width: 40px;
-  height: 40px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-image: url(https://cdn.discordapp.com/attachments/1018521003703406682/1039080287478485032/xcz.png);
-}
-.menu1:hover > .menu2{
-  display: block;
-  animation: menu-ani1 1s;
-}
 @-webkit-keyframes menu-ani1{
- 0% {top:-500px;}
- 100%{top:0px;}
+ 0% {margin-top:-500px;opacity: 0;}
+ 100%{margin-top:0px;opacity: 1;}
  }
+
 .menu2{
   display: none;
   position: fixed;
-  top:0px;
-  right:0px;
-  background: linear-gradient(#9932cc, #dda0dd);
   border-radius: 25px;
-  width: 100px;
-  height: 500px;
+  animation: menu-ani1 1.25s;
 }
-.menu1 li{
-  margin: 10px;
+
+.menu2 li{
+  margin: 30px;
 	padding: 7px 7px 0;
-	line-height: 100%;
-  text-align: center;
   display: block;
-  width: 70px;
-  height:30px;
-	border-radius: 2em;/* 1em =20px; */
+	border-radius: 2em;
+}
+.menu2 li:hover > ul{
+  display: block;
+  animation: me1 1s;
+}
+@-webkit-keyframes me1{
+ 0%{opacity: 0;}
+ 100%{opacity: 1;}
+ }
+.menu2 ul{
+  display: none;
+  padding: 12px 10px 0;
+  left:110px;
+  width: 100%;
+  margin-left:-20px;
+  margin-top:-45px;
+	position: absolute;
+  text-align: center;
+	background: linear-gradient(#9932cc, #dda0dd);
+	border-radius: 5px;
+}
+.menu2 a{
+  font-size: 20px;
+  color:darkorange;
+  font-weight:bold;
+  line-height: 10px;
+  -webkit-text-stroke: 1px purple;
 }
 </style>
 <script type='text/javascript'>
@@ -143,13 +125,65 @@ html .chisato{
     });
   
   })(document);
+  var VisibleMenu = '';
+    addEventListener('click', (event) => {
+        switchMenu( this, 'menu2' );
+    });
+function switchMenu( theMainMenu, theSubMenu, theEvent ){
+    var SubMenu = document.getElementById( theSubMenu );
+    var e = event || window.event;
+    var scrollX = document.documentElement.scrollLeft || document.body.scrollLeft;
+    var scrollY = document.documentElement.scrollTop || document.body.scrollTop;
+    var x = e.pageX || e.clientX + scrollX;
+    var y = e.pageY || e.clientY + scrollY;
+    if( SubMenu.style.display == 'none' ){
+        SubMenu.style.minWidth = theMainMenu.clientWidth;
+        SubMenu.style.display = 'block';
+        hideMenu();
+        VisibleMenu = theSubMenu;
+        SubMenu.style.left = x - 60 + 'px';
+        SubMenu.style.top = y - 10 + 'px';
+    }
+    else{
+        if( theEvent != 'MouseOver' || VisibleMenu != theSubMenu ){
+            SubMenu.style.display = 'none';
+            VisibleMenu = '';
+        }
+    }
+}
+
+function hideMenu(){
+    if( VisibleMenu != '' ){
+        document.getElementById( VisibleMenu ).style.display = 'none';
+    }
+    VisibleMenu = '';
+}
 </script>
-<div class="menu1">
-<div class="menu2">
+<div class="menu2" id="menu2">
 <li>
-<a href='https://www.google.com'><img style="border-radius: 25px;" src="https://cdn.discordapp.com/attachments/1018521003703406682/1039082288564162580/83b9167fe1f067e2.png"></a>
+<img style="border-radius: 25px;" src="https://cdn.discordapp.com/attachments/1018521003703406682/1039082288564162580/83b9167fe1f067e2.png">
+<ul>
+  <a href="./yt.html">YT轉MP3</a>
+</ul>
 </li>
-</div>
+<li>
+<img style="border-radius: 25px;" src="https://cdn.discordapp.com/attachments/1018521003703406682/1039172617455808622/istockphoto-525221576-612x612.jpg">
+<ul>
+  <a href="#">HELLO</a>
+</ul>
+</li>
+<li>
+<img style="border-radius: 25px;" src="https://cdn.discordapp.com/attachments/1018521003703406682/1039172617455808622/istockphoto-525221576-612x612.jpg">
+<ul>
+  <a href="#">HELLO</a>
+</ul>
+</li>
+<li>
+<img style="border-radius: 25px;" src="https://cdn.discordapp.com/attachments/1018521003703406682/1039172617455808622/istockphoto-525221576-612x612.jpg">
+<ul>
+  <a href="#">HELLO</a>
+</ul>
+</li>
 </div>
 <div class="sakana-box"></div>
 <div class="chisato"></div>
