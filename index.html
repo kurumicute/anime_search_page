@@ -23,16 +23,79 @@ top:100px;
   html .sakana-box{
   position: fixed;
   right: 0%;
-  bottom: 0%;
+  bottom: 0px;
   
   transform-origin: 100% 100%;
 }
 html .chisato{
   position: fixed;
   right: 15%;
-  bottom: 0%;
+  bottom: 0px;
   
   transform-origin: 100% 100%;
+}
+.banner{
+            position: relative;
+        }
+.banner .title p{
+            width: 100%;
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            top: 40px;
+            font-size: 20px;
+        }
+.title2{
+  width: 1600px;
+  height: 80px;
+  position: absolute;
+  background: linear-gradient(#9932cc, #dda0dd);
+
+}
+.title1{
+  position: relative;
+  height: 200px;
+  top:5px;
+  left:5px;
+}
+.menu1{
+  position: fixed;
+  top:-15px;
+  right:25px;
+  border-radius: 15px;
+  width: 40px;
+  height: 40px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url(https://cdn.discordapp.com/attachments/1018521003703406682/1039080287478485032/xcz.png);
+}
+.menu1:hover > .menu2{
+  display: block;
+  animation: menu-ani1 1s;
+}
+@-webkit-keyframes menu-ani1{
+ 0% {top:-500px;}
+ 100%{top:0px;}
+ }
+.menu2{
+  display: none;
+  position: fixed;
+  top:0px;
+  right:0px;
+  background: linear-gradient(#9932cc, #dda0dd);
+  border-radius: 25px;
+  width: 100px;
+  height: 500px;
+}
+.menu1 li{
+  margin: 10px;
+	padding: 7px 7px 0;
+	line-height: 100%;
+  text-align: center;
+  display: block;
+  width: 70px;
+  height:30px;
+	border-radius: 2em;/* 1em =20px; */
 }
 </style>
 <script type='text/javascript'>
@@ -81,6 +144,13 @@ html .chisato{
   
   })(document);
 </script>
+<div class="menu1">
+<div class="menu2">
+<li>
+<a href='https://www.google.com'><img style="border-radius: 25px;" src="https://cdn.discordapp.com/attachments/1018521003703406682/1039082288564162580/83b9167fe1f067e2.png"></a>
+</li>
+</div>
+</div>
 <div class="sakana-box"></div>
 <div class="chisato"></div>
 <script src="sakana.min.js"></script>
@@ -88,21 +158,19 @@ html .chisato{
 Sakana.setMute(false);
 Sakana.init({
   el:         '.sakana-box',
-  scale:      1,
+  scale:      0.5,
   inertia: 0.01,
   decay: 1,
 });
 const chisato = Sakana.init({
             el:'.chisato',
             character: 'chisato',
+            scale:      0.5,
             inertia: 0.01,
             decay: 1,
         });
 </script>
 <h1>搜尋：<input type="search" class="light-table-filter" data-table="order-table" placeholder="請輸入關鍵字">
-<br>
-<br>
-<br>
 <table class="order-table">
   <thead>
     <tr>

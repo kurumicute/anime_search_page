@@ -1,9 +1,10 @@
 body {
-  background-image: url(https://cdn.discordapp.com/attachments/631711338296639498/1014560304044199936/20211222232332_1-modified.jpg);
+  background-image: url(https://cdn.discordapp.com/attachments/1018521003703406682/1039066257607110717/illust_102577887_20221107_143808.jpg);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
+  margin: 0px;
 }
 h1{
   font-family:標楷體;
@@ -17,7 +18,7 @@ h1{
   font-size: 40px;
   color:#afeeee;
   text-shadow: 0.1em 0.1em 0.1em black ;
-  position: absolute;
+  position: relative;
   top: 10px;
   }
   .meg
